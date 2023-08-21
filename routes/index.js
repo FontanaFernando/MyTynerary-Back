@@ -1,9 +1,8 @@
-import express from 'express';
-const router = express.Router();
+import { Router } from 'express';
+import cityRouter from './city.js';
 
-/* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+let router = Router();
+
+router.use('/city', cityRouter);
 
 export default router;
