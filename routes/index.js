@@ -3,6 +3,15 @@ import cityRouter from './city.js';
 
 let router = Router();
 
+router.use((req, res, next) => {
+    console.log('Time (router): ', new Date().getFullYear());
+    next();
+});
+
+router.get('/', function (req, res, next) {
+    res.render('index', { title: 'Express' })
+});
+
 router.use('/city', cityRouter);
 
 export default router;
