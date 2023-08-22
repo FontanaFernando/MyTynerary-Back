@@ -2,7 +2,15 @@ import City from '../../models/City.js';
 
 export default async (req, res) => {
     try {
-        const city = await City.find(req.query);
+        const cityId = req.params.id;
+        const city = await City.findById(cityId);
+
+        if (!city) {
+            return res.status(404).json({
+                success: false,
+                message: 'City not found'
+            });
+        }
 
         return res.status(200).json({
             success: true,

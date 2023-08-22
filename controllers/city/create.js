@@ -2,7 +2,7 @@ import City from '../../models/City.js';
 
 export default async (req, res) => {
     try {
-        await City.create(req);
+        await City.create(req.body);
         return res.status(201).json({
             success: true,
             message: 'City created successfully'
