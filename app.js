@@ -8,7 +8,6 @@ import logger from 'morgan';
 import cors from 'cors';
 
 import indexRouter from './routes/index.js';
-import cityRouter from './routes/city.js';
 
 import { __dirname } from './utils.js';
 
@@ -33,7 +32,6 @@ app.use((req, res, next) => {
 
 // router
 app.use('/api', indexRouter);
-app.use('/city', cityRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

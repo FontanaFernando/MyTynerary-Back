@@ -1,21 +1,20 @@
-import City from '../../models/City.js';
+import Itinerary from '../../models/Itinerary.js';
 
 export default async (req, res) => {
     try {
-        const cityId = req.params.id;
-        const updatedCity = await City.findByIdAndUpdate(cityId, req.body, { new: true });
+        let itineraryId = req.params.id;
+        let itineraryDelete = await Itinerary.findByIdAndDelete(itineraryId);
 
-        if (!updatedCity) {
+        if (!itineraryDelete) {
             return res.status(404).json({
                 success: false,
-                message: 'City not found'
+                message: 'Itinerary not found'
             });
         }
 
         return res.status(200).json({
             success: true,
-            message: 'City updated successfully',
-            city: updatedCity
+            message: 'Itinerary deleted successfully'
         });
     } catch (error) {
         console.error(error);
