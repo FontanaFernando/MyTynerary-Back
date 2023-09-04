@@ -2,8 +2,8 @@ import Itinerary from '../../models/Itinerary.js';
 
 export default async (req, res) => {
     try {
-        const { nameCity } = req.params;
-        const itinerary = await Itinerary.findOne(nameCity);
+        const itineraryByCity = req.params.nameCity;
+        const itinerary = await Itinerary.find(itineraryByCity);
 
         if (!itinerary) {
             return res.status(404).json({
