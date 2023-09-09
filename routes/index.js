@@ -5,7 +5,7 @@ import itineraryRouter from './itinerary.js';
 let router = Router();
 
 router.use((req, res, next) => {
-    console.log('Time (router): ', new Date().getFullYear());
+    // console.log('Time (router): ', new Date().getFullYear());
     next();
 });
 

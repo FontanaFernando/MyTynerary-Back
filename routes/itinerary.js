@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.post('/', create);
 router.get('/:id', readById);
-router.get('/:nameCity', readByCity); //TODO revisar si es con id u otra cosa
+router.get('/filter/:id', readByCity);
 router.get('/', readMany);
 router.put('/:id', update);
 router.delete('/:id', destroy);
