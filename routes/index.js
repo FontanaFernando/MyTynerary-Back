@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import cityRouter from './city.js';
 import itineraryRouter from './itinerary.js';
+import authRouter from './auth.js';
 
 let router = Router();
 
@@ -15,5 +16,6 @@ router.get('/', function (req, res, next) {
 
 router.use('/city', cityRouter);
 router.use('/itinerary', itineraryRouter);
+router.use('/auth', authRouter);
 
 export default router;
